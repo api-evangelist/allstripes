@@ -1,17 +1,41 @@
 aid: allstripes
 name: AllStripes
-description: 'AllStripes is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  AllStripes was a San Francisco healthcare technology company, founded in 2017 as RDMD by
+  Nancy Yu and Onno Faber, that built a research platform dedicated to rare disease. It
+  retrieved, digitized and de-identified patients' medical records into regulatory-ready
+  real-world evidence for biopharma drug development, and paired that with a patient
+  application through which families affected by conditions such as Batten disease, Hunter
+  syndrome and sickle cell anemia could participate in treatment research from home. The
+  company raised roughly $74M in venture funding, including a $50M Series B in August 2021
+  led by Lux Capital with JAZZ Venture Partners, Spark Capital, Medidata, McKesson Ventures
+  and Maveron. PicnicHealth acquired AllStripes on October 23, 2023 and folded the platform
+  into its own; the AllStripes brand has since been retired, and allstripes.com and
+  app.allstripes.com now issue blanket 301 redirects to picnichealth.com. AllStripes never
+  published a public developer portal, REST/OpenAPI contract, SDK, or webhook surface, and
+  no such surface survives the acquisition.
 url: https://raw.githubusercontent.com/api-evangelist/allstripes/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-harvest-source-url: https://forgeglobal.com/allstripes_stock/
+x-acquired-by:
+  slug: picnichealth
+  name: PicnicHealth
+  date: '2023-10-23'
+  source: https://picnicresearch.com/resources/picnichealth-acquires-allstripes
 specificationVersion: '0.20'
 created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Health
+- Rare Disease
+- Real-World Data
+- Real-World Evidence
+- Life Sciences
+- Clinical Research
+- Medical Records
+- Acquired
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +43,41 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/allstripes-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/allstripes_stock/
+  name: AllStripes (301 redirects to PicnicHealth)
+  url: https://allstripes.com/
+- type: LinkedIn
+  name: AllStripes (now PicnicHealth)
+  url: https://www.linkedin.com/company/allstripes
+- type: Crunchbase
+  name: AllStripes (filed under its founding name, RDMD)
+  url: https://www.crunchbase.com/organization/rdmd
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    PicnicHealth acquired AllStripes on 2023-10-23 and retired the brand; allstripes.com and
+    app.allstripes.com now blanket-301 every path — /openapi.json, /swagger.json, /api-docs,
+    /llms.txt and every /.well-known/ probe alike — to the picnichealth.com homepage, and
+    there is no allstripes GitHub organization or published package anywhere.
+  evidence:
+  - url: https://allstripes.com/openapi.json
+    status: 301
+  - url: https://allstripes.com/.well-known/agent-card.json
+    status: 301
+  - url: https://allstripes.com/llms.txt
+    status: 301
+  - url: https://app.allstripes.com/
+    status: 301
+  - url: https://github.com/allstripes
+    status: 404
+  - url: https://registry.npmjs.org/allstripes
+    status: 404
+  checked: '2026-08-06'
