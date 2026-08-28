@@ -23,6 +23,17 @@ x-acquired-by:
   name: PicnicHealth
   date: '2023-10-23'
   source: https://picnicresearch.com/resources/picnichealth-acquires-allstripes
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.23'
 created: '2026-08-06'
 modified: '2026-08-06'
